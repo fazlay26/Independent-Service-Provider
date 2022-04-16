@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "name": "Punch Boxing",
+        "description": "We have heap of fun piece of equi to build down every inh of your for body",
+        "price": "100(1 month)",
+        "img": "https://warriorpunch.com/wp-content/uploads/2016/09/Boxing-Punches.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Punch Boxing",
+        "description": "We have heap of fun piece of equi to build down every inh of your for body",
+        "price": "100(1 month)",
+        "img": "https://warriorpunch.com/wp-content/uploads/2016/09/Boxing-Punches.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Punch Boxing",
+        "description": "We have heap of fun piece of equi to build down every inh of your for body",
+        "price": "100(1 month)",
+        "img": "https://warriorpunch.com/wp-content/uploads/2016/09/Boxing-Punches.jpg"
+    }
+]
