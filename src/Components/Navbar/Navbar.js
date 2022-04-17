@@ -9,9 +9,9 @@ const Navbar = () => {
                 <Link className='font-sans font-bold text-xl text-gray-600' to={'/'}>Duffer Fitness</Link>
             </div>
             <div className='flex gap-4 text-xl'>
-                <CustomLink to={'/Homepage'}>Home</CustomLink>
+                <CustomLink to={'/Home'}>Home</CustomLink>
                 <CustomLink to={'/Coins'}>Coins</CustomLink>
-                <CustomLink to={'/Contact'}>Contact</CustomLink>
+                <CustomLink to={'/Login'}>Login</CustomLink>
                 <CustomLink to={'/About'}>About</CustomLink>
 
             </div>

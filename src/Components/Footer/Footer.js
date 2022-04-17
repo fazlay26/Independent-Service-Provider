@@ -4,7 +4,8 @@ const Footer = () => {
     return (
 
 
-        <footer class="p-4 bg-gray-900 rounded-lg shadow md:px-6 md:py-8 ">
+
+        <footer class="  p-4 bg-gray-900 rounded-lg shadow md:px-6 md:py-8 mt-auto">
             <div class="sm:flex sm:items-center sm:justify-between">
                 <a href="https://flowbite.com" class="flex items-center mb-4 sm:mb-0">
                     <span class="self-center text-2xl font-semibold whitespace-nowrap text-stone-300">Duffer Fitness</span>
@@ -28,6 +29,7 @@ const Footer = () => {
             <span class=" text-stone-300 block text-sm sm:text-center dark:text-gray-400">© 2022 <a href="https://flowbite.com" class="hover:underline text-stone-300">Duffer Fitness</a>. All Rights Reserved.
             </span>
         </footer>
+
 
 
     );
