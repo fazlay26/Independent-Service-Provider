@@ -1,14 +1,17 @@
 import React, { useState } from 'react';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import LoginSocial from '../LoginSocial/LoginSocial';
 import './SignUp.css'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const SignUp = () => {
     // const [email, setEmail] = useState('')
     // const [pass, setPass] = useState('')
     // const [confrimPass, setConfrimPass] = useState('')
+    let navigate = useNavigate();
     const [userInfo, setUserInfo] = useState({
         email: "",
         pass: "",
@@ -24,7 +27,7 @@ const SignUp = () => {
         user,
         loading,
         hookError,
-    ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
     const handleEmail = e => {
         const emailRegex = /\S+@\S+\.\S+/;
@@ -59,9 +62,13 @@ const SignUp = () => {
             setUserInfo({ ...userInfo, confirmPass: "" });
         }
     }
+    if (user) {
+        navigate('/')
+    }
     const handleSignUp = e => {
         e.preventDefault()
         createUserWithEmailAndPassword(userInfo.email, userInfo.pass);
+        toast('verification email sent')
     }
     return (
         <div class="w-full  flex flex-col items-center justify-center">
@@ -111,6 +118,9 @@ const SignUp = () => {
                 </div>
             </div> */}
             <LoginSocial></LoginSocial>
+            <ToastContainer
+                position="top-right"
+            />
         </div>
     );
 };

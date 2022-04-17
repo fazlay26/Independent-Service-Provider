@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import './Login.css'
+import 'react-toastify/dist/ReactToastify.css';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import LoginSocial from '../LoginSocial/LoginSocial';
 import auth from '../../firebase.init';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { toast, ToastContainer } from 'react-toastify';
 
 const Login = () => {
     const [userInfo, setUserInfo] = useState({
@@ -22,6 +24,7 @@ const Login = () => {
         loading,
         hookError,
     ] = useSignInWithEmailAndPassword(auth);
+    const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
     let navigate = useNavigate();
     let location = useLocation();
     let from = location.state?.from?.pathname || "/";
@@ -59,6 +62,14 @@ const Login = () => {
         e.preventDefault()
         signInWithEmailAndPassword(userInfo.email, userInfo.pass)
     }
+    const resetPass = async () => {
+        if (userInfo.email) {
+
+            await sendPasswordResetEmail(userInfo.email);
+            toast('Sent email');
+        }
+
+    }
 
     return (
         <div class="w-full  flex flex-col items-center justify-center">
@@ -85,10 +96,10 @@ const Login = () => {
                     </div>
                     {errors?.pass && <p className="text-red-600">{errors.pass}</p>}
                 </div>
-                <a href="#" class="text-xs text-gray-500 float-right mb-4">Forgot Password?</a>
+                <a onClick={resetPass} href="#" class="text-xs text-gray-500 float-right mb-4">Forgot Password?</a>
                 <p className='text-red-600'>{hookError && hookError.message}</p>
                 <button type="submit"
-                    class="w-full py-2 rounded-full bg-cyan-500 text-gray-100  focus:outline-none">Button</button>
+                    class="w-full py-2 rounded-full bg-cyan-500 text-gray-100  focus:outline-none">LogIn</button>
                 <p className='pt-2'>New To Duffer Fitness??<Link className='underline underline-offset-1 text-sky-700' to={'/SignUp'}>Create An Account</Link></p>
             </form>
             {/* <div className='social-media-container pt-3 text-sky-700 text-lg'>
@@ -102,6 +113,9 @@ const Login = () => {
                 </div>
             </div> */}
             <LoginSocial></LoginSocial>
+            <ToastContainer
+                position="top-right"
+            />
         </div>
     );
 };
