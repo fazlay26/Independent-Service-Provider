@@ -11,8 +11,14 @@ import Navbar from './Components/Navbar/Navbar';
 import NotFound from './Components/NotFound/NotFound';
 import RequiredAuth from './Components/RequiredAuth/RequiredAuth';
 import SignUp from './Components/SignUp/SignUp';
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from 'react';
 
 function App() {
+  useEffect(() => {
+    AOS.init();
+  }, [])
   return (
     <div className='flex flex-col min-h-screen'>
       <Navbar></Navbar>

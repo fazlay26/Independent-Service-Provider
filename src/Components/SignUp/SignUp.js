@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import LoginSocial from '../LoginSocial/LoginSocial';
 import './SignUp.css'
@@ -12,6 +12,8 @@ const SignUp = () => {
     // const [pass, setPass] = useState('')
     // const [confrimPass, setConfrimPass] = useState('')
     let navigate = useNavigate();
+    let location = useLocation();
+    let from = location.state?.from?.pathname || "/";
     const [userInfo, setUserInfo] = useState({
         email: "",
         pass: "",
@@ -63,7 +65,7 @@ const SignUp = () => {
         }
     }
     if (user) {
-        navigate('/')
+        navigate(from, { replace: true });
     }
     const handleSignUp = e => {
         e.preventDefault()

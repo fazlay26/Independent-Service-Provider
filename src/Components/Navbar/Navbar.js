@@ -8,10 +8,13 @@ import CustomLink from '../CustomLink/CustomLink';
 const Navbar = () => {
     const [user, loading, error] = useAuthState(auth);
     return (
-        <div className='sticky top-0 bg-white px-12 py-8 flex justify-center md:justify-between z-10'>
+        <div className='sticky top-0 bg-white px-12 py-5 flex justify-center md:justify-between z-10 items-center'>
             <div className='hidden
              md:block'>
-                <Link className='font-sans font-bold text-xl text-gray-600' to={'/'}>Duffer Fitness</Link>
+                <div className='flex items-center'>
+                    <img className='w-1/12 h-1/2' src="https://cdn-icons.flaticon.com/png/512/2112/premium/2112184.png?token=exp=1650220985~hmac=0d50b999ae6a936310058203ec75c7e1" alt="" />
+                    <Link className='font-sans font-bold text-xl text-gray-600' to={'/'}>Duffer Fitness</Link>
+                </div>
             </div>
             <div className='flex gap-4 text-xl'>
                 <CustomLink to={'/Home'}>Home</CustomLink>
