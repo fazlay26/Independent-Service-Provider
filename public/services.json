@@ -1,23 +1,23 @@
 [
     {
         "id": 1,
-        "name": "Punch Boxing",
-        "description": "We have heap of fun piece of equi to build down every inh of your for body",
+        "name": "Complete Athlet Training",
+        "description": "When Im hired by an athlete or actor to add up to 5 to 10 lbs of “performance ready” muscle OR strip them of excess fat, I have hundreds, maybe thousands, of protocols I can use. ",
         "price": "100(1 month)",
         "img": "https://warriorpunch.com/wp-content/uploads/2016/09/Boxing-Punches.jpg"
     },
     {
         "id": 2,
-        "name": "Punch Boxing",
-        "description": "We have heap of fun piece of equi to build down every inh of your for body",
-        "price": "100(1 month)",
-        "img": "https://warriorpunch.com/wp-content/uploads/2016/09/Boxing-Punches.jpg"
+        "name": "FatLoss Program",
+        "description": "Beginners are often forced to do boring, limited workouts that leave them disinterested and likely to fail. Not with Max/Shred. Each exciting workout is designed to deliver results today regardless of your current fitness level and allow you to scale up as your abilities do",
+        "price": "150(1 month)",
+        "img": "https://cdn.muscleandstrength.com/sites/default/files/12_week_fat_destroyer_-_1200x630.jpg"
     },
     {
         "id": 3,
-        "name": "Punch Boxing",
-        "description": "We have heap of fun piece of equi to build down every inh of your for body",
-        "price": "100(1 month)",
-        "img": "https://warriorpunch.com/wp-content/uploads/2016/09/Boxing-Punches.jpg"
+        "name": "Muscle Building Program",
+        "description": "Traditional training methods rely on excessive amounts of volume to cause hypertrophy. This can be shown to provide results, especially in new trainees, however most experts agree there are more direct ways to create hypertrophy especially in experienced athletes.",
+        "price": "200(1 month)",
+        "img": "https://i.ibb.co/xzFr30L/pexels-anush-gorak-1229356-1.jpg"
     }
 ]
