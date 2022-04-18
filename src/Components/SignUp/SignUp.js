@@ -92,7 +92,7 @@ const SignUp = () => {
                         <i className='ml-3 fill-current text-gray-400 text-xs z-10 fas fa-lock'></i>
                         <input onChange={handlePass} type={showPass ? 'text' : 'password'} placeholder="Password"
                             className="-mx-6  w-full border rounded px-3 py-2 text-gray-700 focus:outline-none" required />
-                        <img onClick={() => setShowPass(!showPass)} className='cursor-pointer eye w-1/12 h-1/12 absolute  right-5' src="https://cdn-icons.flaticon.com/png/512/3178/premium/3178374.png?token=exp=1650279078~hmac=8624f85dba3508f099a546a6f2260730" alt="" />
+                        <img onClick={() => setShowPass(!showPass)} className='cursor-pointer eye w-1/12 h-1/12 absolute  right-5' src="https://cdn-icons.flaticon.com/png/512/4298/premium/4298899.png?token=exp=1650302577~hmac=4a37ef70d20f5b29140f5578ef31acc2" alt="" />
                     </div>
                     {errors?.pass && <p className="text-red-600">{errors.pass}</p>}
                 </div>
@@ -101,7 +101,7 @@ const SignUp = () => {
                         <i className='ml-3 fill-current text-gray-400 text-xs z-10 fas fa-lock'></i>
                         <input onChange={handleConfirmPass} type={showPass ? 'text' : 'password'} placeholder=" Confirm Password"
                             className="-mx-6  w-full border rounded px-3 py-2 text-gray-700 focus:outline-none" required />
-                        <img onClick={() => setShowPass(!showPass)} className='cursor-pointer eye w-1/12 h-1/12 absolute  right-5' src="https://cdn-icons.flaticon.com/png/512/3178/premium/3178374.png?token=exp=1650279078~hmac=8624f85dba3508f099a546a6f2260730" alt="" />
+                        <img onClick={() => setShowPass(!showPass)} className='cursor-pointer eye w-1/12 h-1/12 absolute  right-5' src="https://cdn-icons.flaticon.com/png/512/4298/premium/4298899.png?token=exp=1650302577~hmac=4a37ef70d20f5b29140f5578ef31acc2" alt="" />
                     </div>
                 </div>
                 <button type="submit"
