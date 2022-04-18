@@ -65,7 +65,7 @@ const SignUp = () => {
         }
     }
     if (user) {
-        navigate(from, { replace: true });
+        navigate('/home');
     }
     const handleSignUp = e => {
         e.preventDefault()

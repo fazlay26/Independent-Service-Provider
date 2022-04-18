@@ -66,7 +66,7 @@ const Login = () => {
         if (userInfo.email) {
 
             await sendPasswordResetEmail(userInfo.email);
-            toast('Sent email');
+            toast('please check your email');
         }
 
     }

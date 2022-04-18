@@ -2,14 +2,14 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-My Website Feature:
+# My Website Feature:
 * i implement full authentication system
 * set Active Link Route
 * if  anyone forget password then he/she recover his/her password
 * my website is fully responsive
 * implement Not Found Route
 
-list of technologies used in my project:
+# list of technologies used in my project:
 * React Libary
 * Tailwind css
 * React router dom

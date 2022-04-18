@@ -1,6 +1,7 @@
 import React from 'react';
 import CustomerReview from '../CustomerReview/CustomerReview';
 import Footer from '../Footer/Footer';
+import FreeTrial from '../FreeTrial/FreeTrial';
 import Navbar from '../Navbar/Navbar';
 import Services from '../Services/Services';
 import './Home.css'
@@ -27,7 +28,8 @@ const Home = () => {
                 <Services></Services>
             </div>
             <div>
-                <CustomerReview></CustomerReview>
+                {/* <CustomerReview></CustomerReview> */}
+                <FreeTrial></FreeTrial>
             </div>
 
         </div>
