@@ -1,6 +1,6 @@
 .banner {
     background-image: url('https://wallpaperaccess.com/full/1244688.jpg');
+    background-size: cover;
     height: 800px;
-
-
+    width: auto;
 }

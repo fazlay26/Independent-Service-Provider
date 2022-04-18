@@ -12,7 +12,7 @@ const Navbar = () => {
             <div className='hidden
              md:block'>
                 <div className='flex items-center'>
-                    <img className='w-1/12 h-1/2' src="https://cdn-icons.flaticon.com/png/512/2112/premium/2112333.png?token=exp=1650273340~hmac=664bd1453f177263f9053732f79743b1" alt="" />
+                    <img className='w-1/12 h-1/2' src="https://cdn-icons.flaticon.com/png/512/2112/premium/2112184.png?token=exp=1650296725~hmac=45c4b03258928dfb8eafea0ffdfe454c" alt="" />
                     <Link className='font-sans font-bold text-xl text-gray-600' to={'/'}>Duffer Fitness</Link>
                 </div>
             </div>

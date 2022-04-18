@@ -8,9 +8,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const SignUp = () => {
-    // const [email, setEmail] = useState('')
-    // const [pass, setPass] = useState('')
-    // const [confrimPass, setConfrimPass] = useState('')
+    const [showPass, setShowPass] = useState(false);
     let navigate = useNavigate();
     let location = useLocation();
     let from = location.state?.from?.pathname || "/";
@@ -73,39 +71,41 @@ const SignUp = () => {
         toast('verification email sent')
     }
     return (
-        <div class="w-full  flex flex-col items-center justify-center">
-            <form onSubmit={handleSignUp} class="w-full md:w-1/3 bg-white rounded-lg">
-                <div class="flex font-bold justify-center mt-6">
-                    <img class="h-20 w-20"
+        <div className="w-full  flex flex-col items-center justify-center">
+            <form onSubmit={handleSignUp} className="w-full md:w-1/3 bg-white rounded-lg">
+                <div className="flex font-bold justify-center mt-6">
+                    <img className="h-20 w-20"
                         src="https://raw.githubusercontent.com/sefyudem/Responsive-Login-Form/master/img/avatar.svg" alt='' />
                 </div>
-                <h2 class="text-3xl text-center text-gray-700 mb-4">Registration Form</h2>
-                <div class="px-12 pb-10" />
-                <div class="w-full mb-2">
-                    <div class="flex items-center">
-                        <i class='ml-3 fill-current text-gray-400 text-xs z-10 fas fa-user'></i>
+                <h2 className="text-3xl text-center text-gray-700 mb-4">Registration Form</h2>
+                <div className="px-12 pb-10" />
+                <div className="w-full mb-2">
+                    <div className="flex items-center">
+                        <i className='ml-3 fill-current text-gray-400 text-xs z-10 fas fa-user'></i>
                         <input onChange={handleEmail} type='text' placeholder="Email"
-                            class="-mx-6  w-full border rounded px-3 py-2 text-gray-700 focus:outline-none" />
+                            className="-mx-6  w-full border rounded px-3 py-2 text-gray-700 focus:outline-none" required />
                     </div>
                     {errors?.email && <p className="text-red-600">{errors.email}</p>}
                 </div>
-                <div class="w-full mb-2">
-                    <div class="flex items-center">
-                        <i class='ml-3 fill-current text-gray-400 text-xs z-10 fas fa-lock'></i>
-                        <input onChange={handlePass} type='password' placeholder="Password"
-                            class="-mx-6  w-full border rounded px-3 py-2 text-gray-700 focus:outline-none" />
+                <div className="w-full mb-2">
+                    <div className="relative flex items-center">
+                        <i className='ml-3 fill-current text-gray-400 text-xs z-10 fas fa-lock'></i>
+                        <input onChange={handlePass} type={showPass ? 'text' : 'password'} placeholder="Password"
+                            className="-mx-6  w-full border rounded px-3 py-2 text-gray-700 focus:outline-none" required />
+                        <img onClick={() => setShowPass(!showPass)} className='cursor-pointer eye w-1/12 h-1/12 absolute  right-5' src="https://cdn-icons.flaticon.com/png/512/3178/premium/3178374.png?token=exp=1650279078~hmac=8624f85dba3508f099a546a6f2260730" alt="" />
                     </div>
                     {errors?.pass && <p className="text-red-600">{errors.pass}</p>}
                 </div>
-                <div class="w-full mb-2">
-                    <div class="flex items-center">
-                        <i class='ml-3 fill-current text-gray-400 text-xs z-10 fas fa-lock'></i>
-                        <input onChange={handleConfirmPass} type='password' placeholder=" Confirm Password"
-                            class="-mx-6  w-full border rounded px-3 py-2 text-gray-700 focus:outline-none" />
+                <div className="w-full mb-2">
+                    <div className=" relative flex items-center">
+                        <i className='ml-3 fill-current text-gray-400 text-xs z-10 fas fa-lock'></i>
+                        <input onChange={handleConfirmPass} type={showPass ? 'text' : 'password'} placeholder=" Confirm Password"
+                            className="-mx-6  w-full border rounded px-3 py-2 text-gray-700 focus:outline-none" required />
+                        <img onClick={() => setShowPass(!showPass)} className='cursor-pointer eye w-1/12 h-1/12 absolute  right-5' src="https://cdn-icons.flaticon.com/png/512/3178/premium/3178374.png?token=exp=1650279078~hmac=8624f85dba3508f099a546a6f2260730" alt="" />
                     </div>
                 </div>
                 <button type="submit"
-                    class="w-full py-2 rounded-full bg-cyan-500 text-gray-100  focus:outline-none">Register</button>
+                    className="w-full py-2 rounded-full bg-cyan-500 text-gray-100  focus:outline-none">Register</button>
                 <p className='text-red-600'> {hookError && hookError.message}</p>
                 <p className='pt-2'>Already Have An Account?<Link className='underline underline-offset-1 text-sky-700' to={'/Login'}>Please Login</Link></p>
             </form>

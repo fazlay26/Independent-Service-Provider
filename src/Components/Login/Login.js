@@ -8,6 +8,7 @@ import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-
 import { toast, ToastContainer } from 'react-toastify';
 
 const Login = () => {
+    const [showPass, setShowPass] = useState(false);
     const [userInfo, setUserInfo] = useState({
         email: "",
         pass: "",
@@ -72,46 +73,37 @@ const Login = () => {
     }
 
     return (
-        <div class="w-full  flex flex-col items-center justify-center">
-            <form onSubmit={handleLogin} class="w-full md:w-1/3 bg-white rounded-lg">
-                <div class="flex font-bold justify-center mt-6">
-                    <img class="h-20 w-20"
+        <div className="w-full  flex flex-col items-center justify-center">
+            <form onSubmit={handleLogin} className="w-full md:w-1/3 bg-white rounded-lg">
+                <div className="flex font-bold justify-center mt-6">
+                    <img className="h-20 w-20"
                         src="https://raw.githubusercontent.com/sefyudem/Responsive-Login-Form/master/img/avatar.svg" alt='' />
                 </div>
-                <h2 class="text-3xl text-center text-gray-700 mb-4">Login Form</h2>
-                <div class="px-12 pb-10" />
-                <div class="w-full mb-2">
-                    <div class="flex items-center">
-                        <i class='ml-3 fill-current text-gray-400 text-xs z-10 fas fa-user'></i>
+                <h2 className="text-3xl text-center text-gray-700 mb-4">Login Form</h2>
+                <div className="px-12 pb-10" />
+                <div className="w-full mb-2">
+                    <div className="flex items-center">
+                        <i className='ml-3 fill-current text-gray-400 text-xs z-10 fas fa-user'></i>
                         <input onChange={handleEmail} type='text' placeholder="Email"
-                            class="-mx-6 px-8  w-full border rounded px-3 py-2 text-gray-700 focus:outline-none" />
+                            className="md:-mx-6    w-full border rounded px-3 py-2 text-gray-700 focus:outline-none" required />
                     </div>
                     {errors?.email && <p className="text-red-600">{errors.email}</p>}
                 </div>
-                <div class="w-full mb-2">
-                    <div class="flex items-center">
-                        <i class='ml-3 fill-current text-gray-400 text-xs z-10 fas fa-lock'></i>
-                        <input onChange={handlePass} type='password' placeholder="Password"
-                            class="-mx-6 px-8 w-full border rounded px-3 py-2 text-gray-700 focus:outline-none" />
+                <div className="w-full mb-2">
+                    <div className=" relative flex items-center">
+                        <i className='ml-3 fill-current text-gray-400 text-xs z-10 fas fa-lock'></i>
+                        <input onChange={handlePass} type={showPass ? 'text' : 'password'} placeholder="Password"
+                            className="md:-mx-6  w-full border rounded px-3 py-2 text-gray-700 focus:outline-none" required />
+                        <img onClick={() => setShowPass(!showPass)} className='cursor-pointer eye w-1/12 h-1/12 absolute  right-5' src="https://cdn-icons.flaticon.com/png/512/3178/premium/3178374.png?token=exp=1650279078~hmac=8624f85dba3508f099a546a6f2260730" alt="" />
                     </div>
                     {errors?.pass && <p className="text-red-600">{errors.pass}</p>}
                 </div>
-                <a onClick={resetPass} href="#" class="text-xs text-gray-500 float-right mb-4">Forgot Password?</a>
+                <a onClick={resetPass} href="/" className="text-xs text-gray-500 float-right mb-4">Forgot Password?</a>
                 <p className='text-red-600'>{hookError && hookError.message}</p>
                 <button type="submit"
-                    class="w-full py-2 rounded-full bg-cyan-500 text-gray-100  focus:outline-none">LogIn</button>
+                    className="w-full py-2 rounded-full bg-cyan-500 text-gray-100  focus:outline-none">LogIn</button>
                 <p className='pt-2'>New To Duffer Fitness??<Link className='underline underline-offset-1 text-sky-700' to={'/SignUp'}>Create An Account</Link></p>
             </form>
-            {/* <div className='social-media-container pt-3 text-sky-700 text-lg'>
-                <div>
-                    <p className=''>Login With Social Media</p>
-                    <ul className='social-icon'>
-                        <li className='mx-auto pt-2'><img src="https://cdn-icons-png.flaticon.com/512/2702/2702602.png" alt="" />
-
-                            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968764.png" alt="" /> </li>
-                    </ul>
-                </div>
-            </div> */}
             <LoginSocial></LoginSocial>
             <ToastContainer
                 position="top-right"
