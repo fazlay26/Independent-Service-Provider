@@ -1,4 +1,5 @@
 import React from 'react';
+import CustomerReview from '../CustomerReview/CustomerReview';
 import Footer from '../Footer/Footer';
 import Navbar from '../Navbar/Navbar';
 import Services from '../Services/Services';
@@ -24,6 +25,9 @@ const Home = () => {
 
             <div className=' py-6'>
                 <Services></Services>
+            </div>
+            <div>
+                <CustomerReview></CustomerReview>
             </div>
 
         </div>
