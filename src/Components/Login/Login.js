@@ -98,7 +98,7 @@ const Login = () => {
                     </div>
                     {errors?.pass && <p className="text-red-600">{errors.pass}</p>}
                 </div>
-                <a onClick={resetPass} href="/" className="text-xs text-gray-500 float-right mb-4">Forgot Password?</a>
+                <a onClick={resetPass} href="#" className="text-xs text-gray-500 float-right mb-4">Forgot Password?</a>
                 <p className='text-red-600'>{hookError && hookError.message}</p>
                 <button type="submit"
                     className="w-full py-2 rounded-full bg-cyan-500 text-gray-100  focus:outline-none">LogIn</button>
