@@ -1,6 +1,6 @@
 # Duffer Fitness
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is my project live site [Click Here](https://gym-trainer-7746e.web.app/).
 
 ## My Website Feature:
 * i implement full authentication system
