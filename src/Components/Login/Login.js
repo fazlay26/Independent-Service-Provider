@@ -94,7 +94,7 @@ const Login = () => {
                         <i className='ml-3 fill-current text-gray-400 text-xs z-10 fas fa-lock'></i>
                         <input onChange={handlePass} type={showPass ? 'text' : 'password'} placeholder="Password"
                             className="md:-mx-6  w-full border rounded px-3 py-2 text-gray-700 focus:outline-none" required />
-                        <img onClick={() => setShowPass(!showPass)} className='cursor-pointer eye w-1/12 h-1/12 absolute  right-6' src="https://cdn-icons.flaticon.com/png/512/4298/premium/4298899.png?token=exp=1650302577~hmac=4a37ef70d20f5b29140f5578ef31acc2" alt="" />
+                        <img onClick={() => setShowPass(!showPass)} className='cursor-pointer eye w-1/12 h-1/12 absolute  right-6' src="https://cdn-icons-png.flaticon.com/512/633/633633.png" alt="" />
                     </div>
                     {errors?.pass && <p className="text-red-600">{errors.pass}</p>}
                 </div>

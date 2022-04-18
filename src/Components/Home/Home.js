@@ -20,7 +20,7 @@ const Home = () => {
                 </div>
             </div>
 
-            <div className='md:mr-20 py-6'>
+            <div className='mr-20 py-6'>
                 <Services></Services>
             </div>
             <div>
